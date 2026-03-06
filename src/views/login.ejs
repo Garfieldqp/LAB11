@@ -1,21 +1,47 @@
 <!DOCTYPE html>
 <html>
-<body>
-<h1>Login</h1>
+<head>
+<title>Login</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen flex items-center justify-center bg-[#FFF8E7]">
+
+<div class="bg-white w-[420px] p-10 rounded-2xl shadow-xl">
+
+<h1 class="text-3xl font-bold text-center text-[#835C2D] mb-6">
+Login
+</h1>
+
 <% if (err) { %>
-<p style="color:red;">Invalid email or password</p>
+<div class="bg-red-100 text-red-600 p-3 rounded mb-4 text-center">
+Invalid email or password
+</div>
 <% } %>
-<form method="POST" action="/login">
-<input name="email" placeholder="email" />
-<input name="password" type="password" placeholder="password" />
-<button type="submit">Login</button>
+
+<form method="POST" action="/login" class="space-y-4">
+
+<input
+name="email"
+placeholder="Email"
+class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-[#95BBEA] outline-none"
+/>
+
+<input
+name="password"
+type="password"
+placeholder="Password"
+class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-[#95BBEA] outline-none"
+/>
+
+<button
+class="w-full bg-[#930500] text-white py-3 rounded-lg hover:opacity-90 transition font-semibold">
+Login
+</button>
+
 </form>
-<hr />
-<p>Need a test user?</p>
-<form method="POST" action="/register">
-<input name="email" placeholder="email" />
-<input name="password" type="password" placeholder="password" />
-<button type="submit">Register (for testing)</button>
-</form>
+
+</div>
+
 </body>
 </html>
